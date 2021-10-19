@@ -1,6 +1,5 @@
 package com.mcdev.passvalidationview
 
-import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -12,15 +11,15 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val pet = findViewById<EditText>(R.id.password_et)
-        val pvv = findViewById<PasswordValidationView>(R.id.pvv)
+        val passEditText = findViewById<EditText>(R.id.password_et)
+        val validationView = findViewById<PasswordValidationView>(R.id.pvv)
 
-        pvv.passwordEditText = pet
-        pvv.passwordMinLength = 10
-        pvv.enabledColor = android.R.color.holo_orange_dark
+        validationView.passwordEditText = passEditText
+        validationView.passwordMinLength = 10
+        validationView.enabledColor = android.R.color.holo_orange_dark
 
-        pvv.setOnClickListener {
-            Log.d("TAG", "onCreate: ${pvv.isPasswordValid}")
+        validationView.setOnClickListener {
+            Log.d("TAG", "onCreate: ${validationView.isPasswordValid}")
         }
 
     }
