@@ -1,4 +1,6 @@
 # PasswordValidationView
+![Jit](https://img.shields.io/jitpack/v/github/kojofosu/PasswordValidationView?style=for-the-badge&color=2F9319) 
+
 Android UI component that  validates passwords.
 
 All design credits goes to [Piotr Sliwa](https://dribbble.com/dslv) And inspired by [this design](https://dribbble.com/shots/4957240-Fintech-Onboarding-Principles/attachments/10692818?mode=media)
