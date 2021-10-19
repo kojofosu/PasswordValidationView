@@ -1,0 +1,12 @@
+<resources>
+    <string name="a">a</string>
+    <string name="lowercase">Lowercase</string>
+    <string name="uppercase">Uppercase</string>
+    <string name="A">A</string>
+    <string name="special_char">#</string>
+    <string name="special">Special</string>
+    <string name="length">Length</string>
+    <string name="digits">Digits</string>
+    <string name="_0_9">0–9</string>
+    <string name="_min_char">6+</string>
+</resources>
