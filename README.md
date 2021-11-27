@@ -36,7 +36,7 @@ dependencies {
 ## Usage
 Sample implementation [here](app/)
 
-### Split Button
+### Password Validation View
 - Add `PasswordValidationView` to your xml layout.
 
 ```xml
@@ -46,7 +46,7 @@ Sample implementation [here](app/)
         android:layout_height="wrap_content"/>
 ```
 
-### Initialize and customise split button
+### Initialize and customise PasswordValidationView
 
 ```kotlin
         val passEditText = findViewById<EditText>(R.id.password_et) // edittext for the password
