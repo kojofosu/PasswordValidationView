@@ -18,13 +18,10 @@
             android:layout_height="wrap_content"
             android:inputType="textPassword"
             android:layout_margin="20dp"/>
+        <com.mcdev.passwordvalidationview.PasswordValidationView
+            android:id="@+id/pvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
     </com.google.android.material.textfield.TextInputLayout>
-
-
-    <com.mcdev.passwordvalidationview.PasswordValidationView
-        android:id="@+id/pvv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
-
 
 </LinearLayout>
