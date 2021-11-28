@@ -46,6 +46,31 @@ Sample implementation [here](app/)
         android:layout_height="wrap_content"/>
 ```
 
+#### :bulb: `Important` : To avoid the soft keyboard from covering the password validation view, place the view inside a `TextInputLayout` 
+
+```xml
+    <!-- The text input layout-->
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Password">
+        
+        <!-- The text input edit text for the password -->
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/password_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textPassword"
+            android:layout_margin="20dp"/>
+        
+        <!-- The passwrod validation view -->
+        <com.mcdev.passwordvalidationview.PasswordValidationView
+            android:id="@+id/pvv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+    </com.google.android.material.textfield.TextInputLayout>
+```
+
 ### Initialize and customise PasswordValidationView
 
 ```kotlin
