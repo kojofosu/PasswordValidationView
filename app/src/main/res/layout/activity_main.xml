@@ -21,7 +21,8 @@
         <com.mcdev.passwordvalidationview.PasswordValidationView
             android:id="@+id/pvv"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
+            android:layout_height="wrap_content"
+            android:layout_marginHorizontal="20dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
 </LinearLayout>

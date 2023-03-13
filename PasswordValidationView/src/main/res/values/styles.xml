@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!--resize textview for into one line only-->
+    <style name="OneLinerTextViewResizableStyle" >
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:autoSizeTextType" tools:targetApi="O">uniform</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="android:autoSizeMinTextSize" tools:targetApi="O">2sp</item>
+        <item name="autoSizeMaxTextSize">50sp</item>
+        <item name="android:autoSizeMaxTextSize" tools:targetApi="O">50sp</item>
+        <item name="autoSizeStepGranularity">1sp</item>
+        <item name="android:autoSizeStepGranularity" tools:targetApi="O">1sp</item>
+        <item name="maxLines">1</item>
+        <item name="android:maxLines" tools:targetApi="O">1</item>
+    </style>
+
+    <!--resize textview in two lines (best for textviews with spaces)-->
+    <style name="TwoLinerTextViewResizableStyle" >
+        <item name="autoSizeTextType">uniform</item>
+        <item name="android:autoSizeTextType" tools:targetApi="O">uniform</item>
+        <item name="autoSizeMinTextSize">2sp</item>
+        <item name="android:autoSizeMinTextSize" tools:targetApi="O">2sp</item>
+        <item name="autoSizeMaxTextSize">50sp</item>
+        <item name="android:autoSizeMaxTextSize" tools:targetApi="O">50sp</item>
+        <item name="autoSizeStepGranularity">1sp</item>
+        <item name="android:autoSizeStepGranularity" tools:targetApi="O">1sp</item>
+        <item name="maxLines">2</item>
+        <item name="android:maxLines" tools:targetApi="O">2</item>
+    </style>
+</resources>

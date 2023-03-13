@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="symbol_layout_padding">5dp</dimen>
+    <dimen name="symbol_title_size">20sp</dimen>
+    <dimen name="symbol_desc_size">12sp</dimen>
+</resources>

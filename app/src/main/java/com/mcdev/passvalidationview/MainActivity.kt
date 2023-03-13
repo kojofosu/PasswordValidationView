@@ -16,7 +16,7 @@ class MainActivity : AppCompatActivity() {
 
         validationView.passwordEditText = passEditText
         validationView.passwordMinLength = 10
-        validationView.enabledColor = android.R.color.holo_orange_dark
+        validationView.enabledColor = R.color.success_green
 
         validationView.setOnClickListener {
             Log.d("TAG", "onCreate: ${validationView.isPasswordValid}")
