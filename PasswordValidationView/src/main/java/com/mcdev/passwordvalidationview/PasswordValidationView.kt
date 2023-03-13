@@ -30,6 +30,7 @@ class PasswordValidationView @JvmOverloads constructor(
 
 ) : LinearLayout(context, attributeSet, defStyle) {
 
+    val specialCharRegex: Regex = Regex("[!\"#\$%&'()*+,-./:;<=>?@[\\]^_`{|}~]]")
     var isLower = false
     var isUpper = false
     var isDigit = false
@@ -124,11 +125,37 @@ class PasswordValidationView @JvmOverloads constructor(
             binding.lengthLay.lengthTv.setTextColor(resources.getColor(R.color.gray, context.theme))
             isLengthy = false
         }
+        if (string.isBlank() || string.length < passwordMinLength) {
+            //special characters
+            binding.specialCharLay.specialCharSymbol.setTextColor(
+                resources.getColor(
+                    R.color.gray,
+                    context.theme
+                )
+            )
+            binding.specialCharLay.specialCharTv.setTextColor(
+                resources.getColor(
+                    R.color.gray,
+                    context.theme
+                )
+            )
+            isSpecialChar = false
+        }
 
 
         if (string.chars().anyMatch(Character::isLowerCase)) {
-            binding.lowercaseLay.lowerCaseSymbol.setTextColor(resources.getColor(enabledColor, context.theme))
-            binding.lowercaseLay.lowerCaseTv.setTextColor(resources.getColor(enabledColor, context.theme))
+            binding.lowercaseLay.lowerCaseSymbol.setTextColor(
+                resources.getColor(
+                    enabledColor,
+                    context.theme
+                )
+            )
+            binding.lowercaseLay.lowerCaseTv.setTextColor(
+                resources.getColor(
+                    enabledColor,
+                    context.theme
+                )
+            )
 
             if (isLower.not()) {
                 animateSymbol(binding.lowercaseLay.lowerCaseSymbol)
@@ -136,8 +163,18 @@ class PasswordValidationView @JvmOverloads constructor(
             }
         }
         if (string.chars().anyMatch(Character::isUpperCase)) {
-            binding.uppercaseLay.upperCaseSymbol.setTextColor(resources.getColor(enabledColor, context.theme))
-            binding.uppercaseLay.upperCaseTv.setTextColor(resources.getColor(enabledColor, context.theme))
+            binding.uppercaseLay.upperCaseSymbol.setTextColor(
+                resources.getColor(
+                    enabledColor,
+                    context.theme
+                )
+            )
+            binding.uppercaseLay.upperCaseTv.setTextColor(
+                resources.getColor(
+                    enabledColor,
+                    context.theme
+                )
+            )
 
             if (isUpper.not()) {
                 animateSymbol(binding.uppercaseLay.upperCaseSymbol)
@@ -145,7 +182,12 @@ class PasswordValidationView @JvmOverloads constructor(
             }
         }
         if (string.chars().anyMatch(Character::isDigit)) {
-            binding.digitsLay.digitsSymbol.setTextColor(resources.getColor(enabledColor, context.theme))
+            binding.digitsLay.digitsSymbol.setTextColor(
+                resources.getColor(
+                    enabledColor,
+                    context.theme
+                )
+            )
             binding.digitsLay.digitsTv.setTextColor(resources.getColor(enabledColor, context.theme))
 
             if (isDigit.not()) {
@@ -154,12 +196,31 @@ class PasswordValidationView @JvmOverloads constructor(
             }
         }
         if (string.length > passwordMinLength) {
-            binding.lengthLay.lengthSymbol.setTextColor(resources.getColor(enabledColor, context.theme))
+            binding.lengthLay.lengthSymbol.setTextColor(
+                resources.getColor(
+                    enabledColor,
+                    context.theme
+                )
+            )
             binding.lengthLay.lengthTv.setTextColor(resources.getColor(enabledColor, context.theme))
 
             if (isLengthy.not()) {
                 animateSymbol(binding.lengthLay.lengthSymbol)
                 isLengthy = true
+            }
+        }
+        if (string.contains(regex = specialCharRegex)) {
+            binding.specialCharLay.specialCharSymbol.setTextColor(
+                resources.getColor(
+                    enabledColor,
+                    context.theme
+                )
+            )
+            binding.specialCharLay.specialCharTv.setTextColor(resources.getColor(enabledColor, context.theme))
+
+            if (isSpecialChar.not()) {
+                animateSymbol(binding.specialCharLay.specialCharSymbol)
+                isSpecialChar = true
             }
         }
     }
@@ -175,6 +236,7 @@ class PasswordValidationView @JvmOverloads constructor(
                 && isLower
                 && isUpper
                 && isDigit
-                && isLengthy)
+                && isLengthy
+                && isSpecialChar)
     }
 }
