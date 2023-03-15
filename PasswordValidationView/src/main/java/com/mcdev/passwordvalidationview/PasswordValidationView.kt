@@ -25,16 +25,16 @@ class PasswordValidationView @JvmOverloads constructor(
     var isDigit = false
     var isSpecialChar = false
     var isLengthy = false
-    var onValidationListener: OnValidationListener? = null
+    var listener: OnValidationListener? = null
 
     inline fun setOnValidationListener(crossinline listener: (Boolean) -> Unit) {
-        this.onValidationListener = object : OnValidationListener {
+        this.listener = object : OnValidationListener {
             override fun onUpdate(isValid: Boolean) = listener(isValid)
         }
     }
 
     fun setOnValidationListener(listener: OnValidationListener) {
-        this.onValidationListener = listener
+        this.listener = listener
     }
 
     var enabledColor: Int = android.R.color.holo_blue_dark
@@ -238,6 +238,6 @@ class PasswordValidationView @JvmOverloads constructor(
                 && isDigit
                 && isLengthy
                 && isSpecialChar)
-        onValidationListener!!.onUpdate(isPasswordValid)
+        this.listener!!.onUpdate(isPasswordValid)
     }
 }
