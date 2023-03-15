@@ -125,7 +125,7 @@ class PasswordValidationView @JvmOverloads constructor(
             binding.lengthLay.lengthTv.setTextColor(resources.getColor(R.color.gray, context.theme))
             isLengthy = false
         }
-        if (string.isBlank() || string.length < passwordMinLength) {
+        if (string.isBlank() || string.contains(regex = specialCharRegex).not()) {
             //special characters
             binding.specialCharLay.specialCharSymbol.setTextColor(
                 resources.getColor(
