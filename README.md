@@ -10,6 +10,10 @@ All design credits goes to [Piotr Sliwa](https://dribbble.com/dslv) And inspired
 ## Demo 
 <img src="https://user-images.githubusercontent.com/20203694/137968459-52de55ea-59a0-4e3d-bffe-1203e0baa68a.gif" alt="demo"  width="300" />
 
+
+https://user-images.githubusercontent.com/20203694/225364687-88e0047a-bb17-4636-bec3-6c6a7c1c5ea2.mp4
+
+
 ## Setup
 
 Add it in your root `build.gradle` at the end of repositories:
