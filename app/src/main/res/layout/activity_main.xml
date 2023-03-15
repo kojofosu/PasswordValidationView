@@ -8,6 +8,14 @@
     android:layout_marginTop="50dp"
     tools:context=".MainActivity">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Set up password"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        android:layout_marginStart="20dp"/>
+
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -25,4 +33,12 @@
             android:layout_marginHorizontal="20dp"/>
     </com.google.android.material.textfield.TextInputLayout>
 
+    <Button
+        android:id="@+id/btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Continue"
+        android:padding="20dp"
+        android:layout_margin="20dp"
+        android:enabled="false"/>
 </LinearLayout>

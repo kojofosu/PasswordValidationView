@@ -1,11 +1,6 @@
 package com.mcdev.passwordvalidationview
 
 import android.content.Context
-import android.content.res.ColorStateList
-import android.graphics.Color
-import android.os.Build
-import androidx.appcompat.app.AppCompatActivity
-import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.AttributeSet
@@ -13,15 +8,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.widget.EditText
 import android.widget.LinearLayout
-import android.widget.Toast
-import androidx.annotation.RequiresApi
-import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.core.view.isEmpty
 import com.daimajia.androidanimations.library.Techniques
 import com.daimajia.androidanimations.library.YoYo
 import com.mcdev.passwordvalidationview.databinding.PasswordValidationViewBinding
-import java.util.regex.Matcher
-import java.util.regex.Pattern
 
 class PasswordValidationView @JvmOverloads constructor(
     context: Context,
@@ -36,6 +25,17 @@ class PasswordValidationView @JvmOverloads constructor(
     var isDigit = false
     var isSpecialChar = false
     var isLengthy = false
+    var onValidationListener: OnValidationListener? = null
+
+    inline fun setOnValidationListener(crossinline listener: (Boolean) -> Unit) {
+        this.onValidationListener = object : OnValidationListener {
+            override fun onUpdate(isValid: Boolean) = listener(isValid)
+        }
+    }
+
+    fun setOnValidationListener(listener: OnValidationListener) {
+        this.onValidationListener = listener
+    }
 
     var enabledColor: Int = android.R.color.holo_blue_dark
     var isPasswordValid: Boolean = false
@@ -55,10 +55,10 @@ class PasswordValidationView @JvmOverloads constructor(
 
                 override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
                     validatePassword(p0.toString())
+                    checkValidation(p0.toString())
                 }
 
                 override fun afterTextChanged(p0: Editable?) {
-                    checkValidation(p0.toString())
                 }
             })
             field = value
@@ -238,5 +238,6 @@ class PasswordValidationView @JvmOverloads constructor(
                 && isDigit
                 && isLengthy
                 && isSpecialChar)
+        onValidationListener!!.onUpdate(isPasswordValid)
     }
 }
