@@ -21,7 +21,7 @@ class MainActivity : AppCompatActivity() {
 
         validationView.passwordEditText = passEditText
         validationView.passwordMinLength = 10
-        validationView.enabledColor = R.color.success_green
+        //validationView.enabledColor = R.color.success_green
         validationView.setOnValidationListener {
             button.isEnabled = it
         }

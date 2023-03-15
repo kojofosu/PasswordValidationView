@@ -39,6 +39,7 @@
         android:layout_height="wrap_content"
         android:text="Continue"
         android:padding="20dp"
-        android:layout_margin="20dp"
-        android:enabled="false"/>
+        android:layout_marginHorizontal="20dp"
+        android:enabled="false"
+        android:layout_marginTop="150dp"/>
 </LinearLayout>

@@ -37,7 +37,7 @@ class PasswordValidationView @JvmOverloads constructor(
         this.listener = listener
     }
 
-    var enabledColor: Int = android.R.color.holo_blue_dark
+    var enabledColor: Int = R.color.colorPrimary
     var isPasswordValid: Boolean = false
         private set
 

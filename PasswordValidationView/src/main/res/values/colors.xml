@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <color name="colorPrimary">@color/success_green</color>
     <color name="gray">#aaa</color>
     <color name="success_green">#4BB543</color>
 </resources>

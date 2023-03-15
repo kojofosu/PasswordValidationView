@@ -1,7 +1,7 @@
 <resources>
     <string name="a">a</string>
-    <string name="lowercase">Lower Case</string>
-    <string name="uppercase">Upper Case</string>
+    <string name="lowercase">Lowercase</string>
+    <string name="uppercase">Uppercase</string>
     <string name="A">A</string>
     <string name="special_char">#</string>
     <string name="special">Special</string>
