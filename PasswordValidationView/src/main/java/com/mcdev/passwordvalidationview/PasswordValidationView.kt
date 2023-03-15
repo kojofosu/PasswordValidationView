@@ -195,7 +195,7 @@ class PasswordValidationView @JvmOverloads constructor(
                 isDigit = true
             }
         }
-        if (string.length > passwordMinLength) {
+        if (string.length >= passwordMinLength) {
             binding.lengthLay.lengthSymbol.setTextColor(
                 resources.getColor(
                     enabledColor,
