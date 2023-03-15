@@ -84,7 +84,9 @@ Sample implementation [here](app/)
 
 ### Check if password is complete and valid
 ```kotlin
-    validationView.isPasswordValid //returns true if password is complete and valid
+    validationView.setOnValidationListener {
+        button.isEnabled = it //returns true if password is complete and valid
+    }
 ```
 
 
